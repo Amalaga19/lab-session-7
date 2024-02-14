@@ -1,5 +1,11 @@
-<!--
-    extend the base template
+<!-- extend the base template -->
+{% extends "base.html" %}
 
-    override the main block
--->
+<!-- override the main block -->
+{% block main %}
+<ul>
+  {% for row in data %}
+  <li>{{row.Name}} {{row.date}} {{row.open}}</li>
+  {% endfor %}
+</ul>
+{% endblock %}

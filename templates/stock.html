@@ -1,5 +1,17 @@
-<!--
-    extend the base template
+<!-- extend the base template -->
+{% extends "base.html" %}
 
-    override the main block
--->
+<!-- override the main block -->
+{% block main %}
+<div class="summary">
+  <div>all_time_high: {{all_time_high}}</div>
+  <div>all time low: {{all_time_low}}</div>
+  <div>volume average: {{volume_avg}}</div>
+</div>
+
+<ul>
+  {% for row in data %}
+  <li>{{row.Name}} {{row.date}} {{row.open}}</li>
+  {% endfor %}
+</ul>
+{% endblock %}
