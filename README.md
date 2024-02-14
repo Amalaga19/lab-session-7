@@ -4,7 +4,7 @@
 Load the CSV in data/ folder a list of dictionaries in the data variable
 
 ## Exercise 2:
-Render the list of dictionaries in the index
+Render a row per stock in the index page.
 
 ## Exercise 3:
 Create a new route that accepts the ticker of a stock as a path parameter, and render only their:

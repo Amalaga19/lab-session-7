@@ -1,0 +1,23 @@
+body {
+  max-width: 900px;
+  margin: auto;
+  padding-bottom: 50px;
+  font-family: sans-serif;
+}
+
+h1 {
+  color: lightsalmon;
+}
+
+footer {
+  background-color: white;
+  position: sticky;
+  bottom: 0;
+  height: 50px;
+  color: lightsalmon;
+}
+
+div.summary {
+  padding: 1em;
+  background-color: lavender;
+}

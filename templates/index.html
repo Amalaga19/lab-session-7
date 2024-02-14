@@ -1,0 +1,31 @@
+<!-- extending the base template here -->
+{% extends "base.html" %}
+
+<!-- customizing the main block -->
+{% block main %}
+<div>
+  <table>
+    <thead>
+      <td>date</td>
+      <td>open</td>
+      <td>high</td>
+      <td>low</td>
+      <td>close</td>
+      <td>volume</td>
+      <td>Name</td>
+    </thead>
+
+    {% for row in data %}
+    <tr>
+      <td>{{row.date}}</td>
+      <td>{{row.open}}</td>
+      <td>{{row.high}}</td>
+      <td>{{row.low}}</td>
+      <td>{{row.close}}</td>
+      <td>{{row.volume}}</td>
+      <td><a href="/stock/{{row.Name}}">{{row.Name}}</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}
