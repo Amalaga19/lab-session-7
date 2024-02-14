@@ -12,3 +12,11 @@ Create a new route that accepts the ticker of a stock as a path parameter, and r
 - all time lowest
 - average volume
 - name
+
+## Exercise 4:
+
+Modify the second exercise, and add pagination.  For this you'll need to:
+1. render only N rows at a time
+2. capture a `page` parameter from path
+3. start reading at the row `N * page`
+4. add buttons for next and previous page
