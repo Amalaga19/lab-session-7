@@ -8,4 +8,15 @@
   <li>{{row.Name}} {{row.date}} {{row.open}}</li>
   {% endfor %}
 </ul>
+
+<span class="previous-page">
+  {% if page != 0 %}
+  <a href="/page/{{page - 1}}">Previous Page</a>
+  {% endif %}
+</span>
+<!-- previous page link -->
+<span class="next-page">
+  <a href="/page/{{page + 1}}">Next Page</a>
+</span>
+<!-- next page link -->
 {% endblock %}
