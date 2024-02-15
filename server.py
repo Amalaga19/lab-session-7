@@ -13,10 +13,11 @@ with open("data/all_stocks_5yr.csv") as file:
         data.append(row)
 
 
-page_size = 20
+# Exercise 2:
+# Render the list of dictionaries in the index
+@app.route("/")
+def index():
 
-
-def unique_rows_by_ticker(rows):
     filtered_data = []
     latest_ticker_seen = None
     # this is similar to a group by in SQL
@@ -28,28 +29,8 @@ def unique_rows_by_ticker(rows):
         if row["Name"] != latest_ticker_seen:
             filtered_data.append(row)
             latest_ticker_seen = row["Name"]
-    return filtered_data
 
-
-# Exercise 2:
-# Render the list of dictionaries in the index
-@app.route("/")
-def index():
-    filtered_data = unique_rows_by_ticker(data)
-    page = 0
-
-    rows_for_page = filtered_data[page * page_size : (page + 1) * page_size]
-
-    return render_template("index.html", data=rows_for_page, page=0)
-
-
-@app.route("/page/<int:page>")
-def index_page(page):
-    filtered_data = unique_rows_by_ticker(data)
-
-    rows_for_page = filtered_data[page * page_size : (page + 1) * page_size]
-
-    return render_template("index.html", data=rows_for_page, page=page)
+    return render_template("index.html", data=filtered_data)
 
 
 # Exercise 3:
